@@ -1,0 +1,26 @@
+This is a temporary WIP repository which contains the source code for
+the libgpiod GNU/Linux client/daemon programs. Once this project has
+been reviewed and is considered mature enough, the idea is to have it
+merged into to core libgpiod repository.
+
+The primary idea behind this project is to develop a lightweight
+GNU/Linux daemon that has the ability to maintain GPIO line states and
+function as the central GPIO authority. This daemon is to be primarily
+controlled by a client program utility called gpioctl.
+
+To be continued...
+
+Found a bug in the code? Great, how about we squash it! Feel free to
+reach out to a project author detailing what the bug is and the steps
+to reproduce the bug and the authors will squash it on your
+behalf. Alternatively, you can also send through a patch to one of the
+authors detailing the same, but remembering to also include details on
+how the patch addresses the identified issue.
+
+Interested in contributing? Fantastic, an extra set of hands can
+always be put to good use! The root of this project contains a file
+named TODO which outlines some of the outstanding TODO items. Feel
+free to pick up and take on one of those items. Before doing so, it
+might be a good idea to let one of the project authors know so that
+nobody treads on each others feet.
+

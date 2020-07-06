@@ -21,15 +21,12 @@
 #include <sys/socket.h>
 #include <sys/resource.h>
 
-#define SUCCESS 0
-#define FAILURE 1
+#include "gpiod.h"
 
-#define BUF_SZ  4096
 #define BACKLOG 1024
 
 #define GPIOD_PID_FILE "/var/run/gpiod.pid"
 #define GPIOD_PID_FILE_MODE (S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH)
-#define GPIOD_DOMAIN_SOCK "/var/run/gpiod.sock"
 
 enum modes {
 	PRINT_STDERR = 0,

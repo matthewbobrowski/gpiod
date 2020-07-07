@@ -15,4 +15,17 @@ enum result_codes {
 	FAILURE,
 };
 
+enum request_types {
+	GET = 0,
+	SET,
+	LIST,
+	INFO,
+};
+
+struct request {
+	int type;
+	size_t len;
+	char data[0];
+};
+
 #endif /* GPIOD_H */

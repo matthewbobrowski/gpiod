@@ -346,6 +346,31 @@ static int init_domain_sock(void)
 	return 0;
 }
 
+/*
+ * This function routes client requests to the respective subroutines
+ * based on the request type that is specified.
+ */  
+static int handle_client_req(const char *buf, ssize_t len)
+{
+	struct request *req;
+
+	req = (struct request *) buf;
+	switch (req->type) {
+	case GET:
+		break;
+	case SET:
+		break;
+	case LIST:
+		break;
+	case INFO:
+		break;
+	default:
+		return 1;
+	}
+
+       	return 0;
+}
+
 int main(int argc, char **argv)
 {
 	ssize_t ret;
@@ -436,6 +461,13 @@ int main(int argc, char **argv)
 			print(LOG_ERR,
 			      "Failed to read bytes from file descriptor %d (%s)",
 			      connfd, strerror(errno));
+			close(connfd);
+			exit(EXIT_FAILURE);
+		}
+
+		if (handle_client_req(buf, ret)) {
+			print(LOG_ERR,
+			      "Failed to handle client request");
 			close(connfd);
 			exit(EXIT_FAILURE);
 		}
